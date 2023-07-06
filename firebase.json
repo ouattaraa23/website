@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "amara-mofodia-ouattara",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/personalWebpage.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+Deploy Command: firebase deploy --only hosting:amara-mofodia-ouattara
