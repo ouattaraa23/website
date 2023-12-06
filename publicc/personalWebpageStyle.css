@@ -1,0 +1,473 @@
+html {
+  margin: auto;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+:root {
+  --scroll-bar-color: #efd9ff;
+  --scroll-bar-bg-color: #0d0013;
+}
+
+/* The body */
+body {
+  background-color: #0d0013;
+  display: block;
+  overflow: hidden;
+  font-family: "Poppins", "sans-serif";
+}
+
+section {
+  background-color: #0d0013;
+}
+
+.header {
+  height: 100vh;
+  color: #efd9ff;
+  font-size: 30px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #efd9ff;
+  position: relative;
+}
+
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #efd9ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+svg {
+  fill: #efd9ff;
+}
+
+h1 {
+  font-size: 300%;
+  margin: 0;
+}
+
+h2 {
+  font-size: 90px;
+}
+
+h3 {
+  font-size: 60px;
+}
+
+p {
+  margin-top: 8px;
+  font-size: 30px;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+.me-area {
+  display: flex;
+  padding-top: 50px;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.me-text {
+  margin-left: 3%;
+  margin-bottom: 10%;
+}
+
+.button {
+  width: 250px;
+  height: 100px;
+  color: #fbf5ff;
+  border-radius: 40px;
+  text-align: center;
+  background-color: #ac80ff;
+  font-size: 30px;
+  font-weight: 300;
+  padding-top: 5px;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #c7a9ff;
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #34004d;
+  text-decoration: underline;
+}
+
+.headshot {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  padding-left: 30px;
+  border-radius: 20%;
+}
+
+.headshot-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.socials {
+  padding-bottom: 0;
+}
+
+.container {
+  padding: 10px 5%;
+}
+
+.social {
+  margin: 20px;
+  text-decoration: none;
+}
+
+.logo {
+  height: 100px;
+  margin: 20px;
+}
+
+.sub-section {
+  display: flex;
+  color: #efd9ff;
+  justify-content: space-around;
+}
+
+.sub-section button {
+  align-items: center;
+}
+
+/* ---------------- ABOUT ME SECTION ----------- */
+
+#about {
+  padding: 80px 0;
+  color: #efd9ff;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+/* ----------------- PROJECTS SECTION ------------------  */
+
+#projects {
+  padding: 80px 0;
+  color: #efd9ff;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.project {
+  width: 80%;
+  height: 70%;
+  align-items: center;
+  justify-self: center;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.project:hover img {
+  transform: scale(1.1);
+}
+
+.project:hover .layer {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), #c9a8e3);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 10%;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  margin-bottom: 20px;
+}
+
+.svg-container {
+  cursor: pointer;
+  color: #efd9ff;
+  background: #34004d;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.svg-container:hover {
+  background: #c7a9ff;
+  color: #34004d;
+}
+
+/* ------------ MODAL FOR PROJECTS --------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #0d0013;
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 75%;
+}
+
+.modal-content h2 {
+  padding: 5px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  padding: 5px;
+  text-align: center;
+}
+
+.modal-content p {
+  padding: 5px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+}
+
+.close {
+  color:#efd9ff;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color:#ae00ff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------------- INTERESTS SECTIONS --------- */
+
+#interests {
+  padding: 80px 0;
+  color: #efd9ff;
+}
+
+.interest-col-1 {
+  flex-basis: 35%;
+}
+
+.interest-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.interest-col-2 {
+  flex-basis: 60%;
+}
+
+.interest-col-3 {
+  flex-basis: 60%;
+}
+
+.interest-col-4 {
+  flex-basis: 30%;
+}
+
+.interest-col-4 img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+
+/* ---------------- For Phone Screens -----------*/
+@media only screen and (max-width: 600px) {
+
+  /* We'll use a flexible box layout for the nav to stack the items */
+  nav {
+    flex-direction: column;
+  }
+
+  /* Navigation items will take up full width and be centered */
+  nav ul li {
+    display: block;
+    text-align: center;
+    margin: 10px 0; /* Removed horizontal margin */
+  }
+
+  /* Adapt the header size */
+  .header {
+    height: auto; /* Changed to auto for flexibility */
+    font-size: 20px; /* Reduced font size */
+  }
+
+  /* Resize heading elements */
+  h1 {
+    font-size: 200%;
+  }
+  
+  h2 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  /* Adapt the .me-area to stack items */
+  .me-area {
+    flex-direction: column;
+    padding-top: 20px; /* Reduced padding */
+  }
+
+  /* Adapt the .me-text */
+  .me-text {
+    margin-left: 0; /* Removed margin */
+    text-align: center; /* Centered text */
+  }
+
+  /* Adapt the .headshot */
+  .headshot {
+    max-width: 100%; /* Allow image to fill parent */
+    padding: 10px; /* Reduced padding */
+  }
+
+  /* Adapt the about section */
+  .row, .about-col-1, .about-col-2 {
+    flex-basis: 100%; /* Elements will take up full width */
+  }
+
+  /* Adapt the project list */
+  .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Allow more flexible grid */
+  }
+
+  /* Adapt the interests sections */
+  .interest-col-1, .interest-col-2, .interest-col-3, .interest-col-4 {
+    flex-basis: 100%; /* Elements will take up full width */
+  }
+
+  /* Make the modal content full width for smaller screens, but with some padding */
+  .modal-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+
+  /* Adjust the close button size for easier touch interaction */
+  .close {
+    font-size: 36px; /* Increased size for better visibility and touch */
+  }
+
+  /* Adjust modal padding-top */
+  .modal {
+    padding-top: 20px; /* Reduced padding-top for better space usage */
+  }
+}
